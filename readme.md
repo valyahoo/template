@@ -1,6 +1,21 @@
-# Status
+# TL;DR
 
-This explores creating template projects (future feature), in particular creating ports in advance.  The `.devcontainer` works, but creates the port as private.
+## Create a project
+
+API Logic Server creates executable web projects from a database.  To explore:
+
+```
+ApiLogicServer create --project_name=./ --db_url=
+```
+
+This will create a port, but you must (currently) make it public as explained below.  
+
+Then, [open the Tutorial](Tutorial.md).
+
+
+## Exploring how to make port public
+
+This explores creating template projects (future feature), in particular creating **public** ports in advance.  The `.devcontainer` works, but creates the port as private.
 
 [This link](https://github.com/orgs/community/discussions/4068) describes how to work around missing setting for creating public ports.  It failed (11/5) as described in a reply near the end:
 
@@ -16,7 +31,9 @@ api_logic_server@codespaces-ea715a:/workspaces/template/.devcontainer$ gh -h
 bash: gh: command not found
 ```
 
-Any help would be much appreciated.
+Currently under investigation.
+
+&nbsp;
 
 # Welcome to API Logic Server
 
