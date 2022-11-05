@@ -1,3 +1,10 @@
+# Status
+
+This explores creating template projects (future feature), in particular creating ports in advance.  The `.devcontainer` works, but creates the port as private.
+
+[This link](https://github.com/orgs/community/discussions/4068) describes how to work around missing setting for creating public ports.
+
+
 # Welcome to API Logic Server
 
 API Logic Server creates __customizable database web app projects:__
