@@ -8,9 +8,13 @@ API Logic Server creates executable web projects from a database.  To explore:
 ApiLogicServer create --project_name=./ --db_url=
 ```
 
-This will create a port, but you must (currently) make it public as explained below.  
+This will create a public port, but it it fails, you must (currently) make it public as explained below.  
 
-Then, [open the Tutorial](Tutorial.md).
+Then:
+
+1. Start the server (default Launch Config)
+2. Start the web app (Ports > Globe)
+3. [Open the Tutorial](Tutorial.md).
 
 
 ## Exploring how to make port public
@@ -28,7 +32,11 @@ bash: /home/api_logic_server/.bashrc: Permission denied
 api_logic_server@codespaces-8b4a37:/workspaces/template/.devcontainer$ 
 ```
 
-Currently under investigation.
+Currently under investigation.  It appears to work as suggested in the much-appreciated post by adding this to `.devcontainer/setup.sh`:
+
+```
+gh codespace ports visibility 5656:public -c $CODESPACE_NAME
+```
 
 &nbsp;
 
