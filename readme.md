@@ -19,16 +19,13 @@ This explores creating template projects (future feature), in particular creatin
 
 [This link](https://github.com/orgs/community/discussions/4068) describes how to work around missing setting for creating public ports.  It failed (11/5) as described in a reply near the end:
 
-I updated [this repo](https://github.com/ApiLogicServer/template), and have 2 issues (I [build my own container](https://github.com/valhuber/ApiLogicServer/blob/main/docker/api_logic_server_x.Dockerfile)):
-
-1. `gh` is not installed
-2. Permissions:
+I updated [this repo](https://github.com/ApiLogicServer/template), and a permission issue (I [build my own container](https://github.com/valhuber/ApiLogicServer/blob/main/docker/api_logic_server_x.Dockerfile)):
 
 ```
-api_logic_server@codespaces-ea715a:/workspaces/template/.devcontainer$ sh setup.sh
-setup.sh: 1: cannot create /home/api_logic_server/.bashrc: Permission denied
-api_logic_server@codespaces-ea715a:/workspaces/template/.devcontainer$ gh -h
-bash: gh: command not found
+api_logic_server@codespaces-8b4a37:/workspaces/template$ cd .devcontainer/
+api_logic_server@codespaces-8b4a37:/workspaces/template/.devcontainer$ echo "gh codespace ports -c $CODESPACE_NAME" >> ~/.bashrc
+bash: /home/api_logic_server/.bashrc: Permission denied
+api_logic_server@codespaces-8b4a37:/workspaces/template/.devcontainer$ 
 ```
 
 Currently under investigation.
