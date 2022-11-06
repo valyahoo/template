@@ -43,9 +43,9 @@ These instructions will continue in Codespaces.
 <summary>What Just Happened</summary>
 
 
-You will now see the sample project - running in VSCode, _in the Browser._  But that's just what you _see..._
+You will now see the template project - open in VSCode, _in the Browser._  But that's just what you _see..._
 
-Behind the scenes, Codespaces has requisitioned a cloud machine, and loaded your project - with a _complete development environment_ - Python, your dependencies, git, etc.  
+Behind the scenes, Codespaces has requisitioned a cloud machine, and loaded the template - with a _complete development environment_ - Python, your dependencies, git, etc.  
 
 You are attached to this machine in your Browser, running VSCode.
 
