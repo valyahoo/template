@@ -1,8 +1,17 @@
 # Quick Start
 
+API Logic Server creates and runs web app projects: an API and an Admin UI. 
+
+Customize with Python in standard IDEs.
+
+Unique spreadsheet-like business rules for multi-table derivations and constraints - 40X more concise than code.
+
+Follow the steps below to be up and running in about a minute - no install, no configuration.  You can run the created project to explore its functionality, and how to customize it in VSCode.
+
+
 ## 1. Open in Codespaces
 
-Here are some instructions you can use to explore API Logic Server running under CodeSpaces.
+Open this template project in Codespaces.
 
 <details markdown>
 
