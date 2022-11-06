@@ -177,7 +177,7 @@ API Logic Server is an open source Python project.  It runs as a standard Python
    * Customize your projects in an IDE such as VSCode or PyCharm
 
 
-> :bulb: API Logic Server reads your schema, and creates an executable, customizable project.  Let's explore the sample now.
+> :bulb: API Logic Server reads your schema, and creates an executable, customizable project.
 
 &nbsp;
 
