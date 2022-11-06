@@ -8,6 +8,7 @@ Unique spreadsheet-like business rules for multi-table derivations and constrain
 
 Follow the steps below to be up and running in about a minute - no install, no configuration.  You can run the created project to explore its functionality, and how to customize it in VSCode.
 
+&nbsp;
 
 ## 1. Open in Codespaces
 
