@@ -1,65 +1,132 @@
-# TL;DR
+# Quick Start
 
-## Create a project
+## 1. Open in Codespaces
 
-API Logic Server creates executable web projects from a database.  To explore:
+Here are some instructions you can use to explore API Logic Server running under CodeSpaces.
+
+<details markdown>
+
+<summary>Show Me How</summary>
+
+&nbsp;
+
+<figure><img src="https://github.com/valhuber/apilogicserver/wiki/images/git-codespaces/open-on-codespaces.jpg?raw=true"></figure> 
+
+&nbsp;
+
+__1. Use your GitHub account__ - no additional sign-up required
+
+__2. Load the working_software_now project from GitHub__
+
+To access this GitHub project with Codespaces
+
+1. __Open [this page](https://github.com/ApiLogicServer/working_software_now)  _in a new window___, and 
+2. Click __Open > Codespaces__ as shown below
+3. You will see an empty project.
+
+These instructions will continue in Codespaces.
+
+<details markdown>
+
+&nbsp;
+
+<summary>What Just Happened</summary>
+
+
+You will now see the sample project - running in VSCode, _in the Browser._  But that's just what you _see..._
+
+Behind the scenes, Codespaces has requisitioned a cloud machine, and loaded your project - with a _complete development environment_ - Python, your dependencies, git, etc.  
+
+You are attached to this machine in your Browser, running VSCode.
+
+> :trophy: Pretty remarkable.
+
+</details>
+
+</details>
+
+
+&nbsp;
+
+## 2. Create a project
+
+Paste this into the Terminal window:
 
 ```
 ApiLogicServer create --project_name=./ --db_url=
 ```
 
-This will create a public port, but it it fails, you must (currently) make it public as explained below.  
+<details markdown>
 
-Then:
-
-1. Start the server (default Launch Config)
-2. Start the web app (Ports > Globe)
-3. [Open the Tutorial](Tutorial.md).
-
-
-## Exploring how to make port public
-
-This explores creating template projects (future feature), in particular creating **public** ports in advance.  The `.devcontainer` works, but creates the port as private.
-
-[This link](https://github.com/orgs/community/discussions/4068) describes how to work around missing setting for creating public ports.  It failed (11/5) as described in a reply near the end:
-
-I updated [this repo](https://github.com/ApiLogicServer/template), and a permission issue (I [build my own container](https://github.com/valhuber/ApiLogicServer/blob/main/docker/api_logic_server_x.Dockerfile)):
-
-```
-api_logic_server@codespaces-8b4a37:/workspaces/template$ cd .devcontainer/
-api_logic_server@codespaces-8b4a37:/workspaces/template/.devcontainer$ echo "gh codespace ports -c $CODESPACE_NAME" >> ~/.bashrc
-bash: /home/api_logic_server/.bashrc: Permission denied
-api_logic_server@codespaces-8b4a37:/workspaces/template/.devcontainer$ 
-```
-
-Currently under investigation.  It appears to work as suggested in the much-appreciated post by adding this to `.devcontainer/setup.sh`:
-
-```
-gh codespace ports visibility 5656:public -c $CODESPACE_NAME
-```
+<summary>What Just Happened</summary>
 
 &nbsp;
 
-# Welcome to API Logic Server
+The system examined your database (here the default) and __created an _executable project:___
 
-API Logic Server creates __customizable database web app projects:__
+* __API__ - an endpoint for each table, with full CRUD services, filtering, sorting, pagination and related data access
 
-* __Creation is Instant:__ create projects with a single command
+* __Admin UI__ - multi-page / multi-table apps, with page navigations and automatic joins
 
-* __Projects are Highly Functional:__
+__Projects are Customizable, using _your IDE_:__ the Project Explorer shows the project structure, at left.  Use the code editor to customize your project, and the debugger to debug it.
 
-    * __API__ - an endpoint for each table, with filtering, sorting, pagination and related data access
-
-    * __Admin UI__ - multi-page / multi-table apps, with page navigations and automatic joins
+__Business Logic is Automated:__ use unique spreadsheet-like rules to declare multi-table derivations and constraints - 40X more concise than code.  Extend logic with Python.
 
 
-* __Projects are Customizable, using _your IDE_:__ such as VSCode, PyCharm, etc, for familiar edit/debug services
+<details markdown>
 
-* __Business Logic Automation:__ using unique rules, extensible with Python
+<summary>Using your own database</summary>
 
-[Instructions](#exploration-guide) are below.  Extensive [product documentation is available here](https://valhuber.github.io/ApiLogicServer/) - checkout the [FAQs](https://valhuber.github.io/ApiLogicServer/FAQ-Frameworks/).
+&nbsp;
 
-This is the sample project, provided so you can explore API Logic Server in Codespaces -- __zero install.__
+In this case, we used a default Customers/Orders database.  To use your own database, provide the `db_url`.
+
+</details>
+</details>
+
+&nbsp;
+
+## 3. Start the Server, and Launch the Admin App
+
+The project is ready to run:
+
+1. Use the default Run Configuration to start the server, and 
+
+2. Start the web app (Ports > Globe). 
+
+<details markdown>
+
+&nbsp;
+
+<summary>Show Me How</summary>
+
+<figure><img src="https://github.com/valhuber/apilogicserver/wiki/images/git-codespaces/create-port-launch-simple.jpg?raw=true"></figure>
+
+</details>
+
+&nbsp;
+
+## 4. Explore the Tutorial
+
+[Open the Tutorial](Tutorial.md) to explore the sample project.
+
+<details markdown>
+
+&nbsp;
+
+<summary>Tutorial Overview</summary>
+
+The Tutorial will enable you to explore 2 key aspects:
+
+* __Initial Automation__ - API and UI creation are automated from the data model. So, later, you'd see this level of automation for your own databases.
+
+* __Customization and Debugging__ - this sample also includes customizations for extending the API and declaring logic, and how to use VSCode to debug these.  The Tutorial will clearly identify such pre-built customizations.
+
+</details>
+
+&nbsp;
+
+Extensive [product documentation is available here](https://valhuber.github.io/ApiLogicServer/) - checkout the [FAQs](https://valhuber.github.io/ApiLogicServer/FAQ-Frameworks/).
 
 &nbsp;
 
@@ -112,99 +179,6 @@ The fastest way - _with no install_ - is to follow the Exploration Guide (below)
     * The created UI and API
     * Customizing the UI and API with the VSCode editor and debugger
     * Adding Business Logic with the VSCode editor, and debugging it
-
-&nbsp;
-
-# Exploration Guide
-
-The fastest way to explore API Logic Server is to open Codespaces and run the Tutorial, as described below.
-
-&nbsp;
-
-### 1. Open in Codespaces
-
-Here are some instructions you can use to explore API Logic Server running under CodeSpaces.
-
-&nbsp;
-
-__1. Use your GitHub account__ - no additional sign-up required
-
-__2. Load the working_software_now project from GitHub__
-
-To access this GitHub project with Codespaces
-
-1. __Open [this page](https://github.com/ApiLogicServer/working_software_now)  _in a new window___, and 
-2. Click __Open > Codespaces__ as shown below
-3. You will see an empty project.  To create the sample, paste the following into the terminal window:
-
-```
-ApiLogicServer create --project_name=./ --db_url=
-```
-
-where:
-
-   * `project_name` is specified to be the current directory (normally a new directory)
-
-   * `db_url` is specified as the sample (normally a SQLAlchemy URI to your own database)
-
-<figure><img src="https://github.com/valhuber/apilogicserver/wiki/images/git-codespaces/open-on-codespaces.jpg?raw=true"></figure> 
-
-> You will now see the sample project - running in VSCode, _in the Browser._  But that's just what you _see..._
-
-> Behind the scenes, Codespaces has requisitioned a cloud machine, and loaded your project - with a _complete development environment_ - Python, your dependencies, git, etc.  
-
-> You are attached to this machine in your Browser, running VSCode.
-
-> :trophy: Pretty remarkable.
-
-&nbsp;
-
-__3. Add and Configure a Port__
-
-Referring to the figure below, click the __Ports__ tab, and:
-
-1. Add the Port (5656)
-2. Make the port __public__ (use right-click to alter the Visibility)
-
-__4. Start the Server__
-
-* Use the pre-defined Launch Configuration
-
-__5. Start the Browser__
-
-* Click the globe (on the Ports tab), as shown below.  This should start your Browser, and the links on the left (Customer etc) should return data.
-
-<figure><img src="https://github.com/valhuber/apilogicserver/wiki/images/git-codespaces/create-port-launch-simple.jpg?raw=true"></figure>
-
-
-<details markdown>
-<summary>If errors, use this procedure</summary>
-
-The above procedure is simplified, based on some assumptions about Codespaces.  If the Browser fails to launch, try the following for explicit specification of the forwarded port:
-
-<figure><img src="https://github.com/valhuber/apilogicserver/wiki/images/git-codespaces/create-port-launch.png?raw=true"></figure>
-
-__4. Configure the pre-created `Codespaces-ApiLogicServer` launch configuration__ (see above)
-
-__5. Start the Server__ using the provided Launch Configuration = `Codespaces-ApiLogicServer`
-
-__6. Open the Browser__
-
-Click the globe, as shown above.  This should start your Browser, and the links on the left (Customer etc) should return data.
-
-</details>
-
-&nbsp;
-
-### 2. Run the Tutorial
-
-The Tutorial will enable you to explore 2 key aspects:
-
-* __Initial Automation__ - API and UI creation are automated from the data model. So, later, you'd see this level of automation for your own databases.
-
-* __Customization and Debugging__ - this sample also includes customizations for extending the API and declaring logic, and how to use VSCode to debug these.  The Tutorial will clearly identify such pre-built customizations.
-
-Now, [open the Tutorial](Tutorial.md).
 
 &nbsp;
 ---
