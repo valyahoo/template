@@ -179,6 +179,18 @@ API Logic Server is an open source Python project.  It runs as a standard Python
 
 > :bulb: API Logic Server reads your schema, and creates an executable, customizable project.  Let's explore the sample now.
 
+&nbsp;
+
+### Bottom Line: Faster, Simpler, Architectural Quality
+
+Automation makes it __faster:__ what used to require weeks or months is now immediate.  Unblock UI Dev, and engage business users - _early_ - instead of investing in a misunderstanding.
+
+Automation makes it __simpler:__ this reduces the risk of architectural errors, e.g., APIs without pagination.
+
+And finally, automation guarantees a base level of __architecture:__ systems will always have APIs (no more logic in UI controllers), logic will be always shared between UIs and APIs, and predictable for maintenance teams.
+
+
+
 
 &nbsp;
 ---
