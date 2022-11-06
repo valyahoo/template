@@ -1,6 +1,6 @@
 # Quick Start
 
-API Logic Server creates and runs web app projects: an API and an Admin UI. 
+API Logic Server reads your schema to create executable web app projects: an API and an Admin UI. 
 
 Customize with Python in standard IDEs.
 
@@ -72,7 +72,9 @@ ApiLogicServer create --project_name=./ --db_url=
 
 &nbsp;
 
-The system examined your database (here the default) and __created an _executable project:___
+This is **not** a coded application.
+
+The system examined your database (here, the default), and __created an _executable project:___
 
 * __API__ - an endpoint for each table, with full CRUD services, filtering, sorting, pagination and related data access
 
