@@ -167,18 +167,6 @@ API Logic Server is an open source Python project.  It runs as a standard Python
 
 > :bulb: API Logic Server reads your schema, and creates an executable, customizable project.  Let's explore the sample now.
 
-&nbsp;
-
-### About this Exploration 
-
-The fastest way - _with no install_ - is to follow the Exploration Guide (below) to:
-
-* Open this empty project in Codespaces
-* Use `ApiLogicServer create` to create the sample application
-* Use the Tutorial to review:
-    * The created UI and API
-    * Customizing the UI and API with the VSCode editor and debugger
-    * Adding Business Logic with the VSCode editor, and debugging it
 
 &nbsp;
 ---
