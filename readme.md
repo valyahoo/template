@@ -1,243 +1,319 @@
-## About this Tutorial
+# Quick Start
 
-This Tutorial is designed for these scenarios:
+<details markdown>
 
-* You have executed the `ApiLogicServer create` step, have opened the created [default project](https://valhuber.github.io/ApiLogicServer/Sample-Database/) in your IDE, and want to explore a typical project
-
-   * Projects are pre-configured for VS Code with `.devcontainer` and `launch configurations,` so these instructions are oriented around VS Code.
-
-* You are reviewing the docs, and want to get a sense of the software
-
-In this tutorial, we will explore:
-
-* **create** - we will briefly review what actually happened during the create process
-
-* **run** - we will first run the Admin App and the JSON:API.  These will illustrate how automation creates an app and API from a data model.  You can then infer what you'd get for one of your databases.
-
-* **customize** - we will then explore some customizations already done for the API and logic, and how to debug them.
-
-&nbsp;&nbsp;
-
----
-
-## Key Underlying Concepts
-This tutorial illustrates some key concepts:
-
-### _Declarative Models_, not code
-Observe that the files for the Admin App and API are models that describe _what, not how_.  This makes it much easier to understand than large amounts of generated code.
-
-### Preserve Customizations
-The system is designed to enable `rebuild`, so you can iterate the data model - _without losing your customizations._  In general, such customizations are kept in separate files from the model files.  So, the model files can be rebuilt without affecting customization files.
-
-### Logic Automation
-A unique feature of API Logic Server is provision for spreadsheet-like rules for multi-table derivations and constraints, extensible with Python.
-
-&nbsp;&nbsp;
-
----
-
-## Create
-
-[![Using VS Code](https://github.com/valhuber/apilogicserver/wiki/images//creates-and-runs-video.jpg?raw=true?raw=true)](https://youtu.be/tOojjEAct4M "Using VS Code with the ApiLogicServer container - click for video")
-
-The diagram above summarizes the create / run / customize process.  When you issue the `ApiLogicServer create` CLI command, the system reads your schema and creates a customizable API Logic Project.
-
-> It's a video - click to view.
+<summary>What is API Logic Server</summary>
 
 &nbsp;
 
-## Create and establish Python Environment
+API Logic Server creates __customizable database web app projects:__
 
-After creation, you must establish your Python environment:
+* __Creation is Instant:__ create projects with a single command
 
-* This is already complete for Codespace users
-* Other users - please  see [Quick Start > Express Install](https://valhuber.github.io/ApiLogicServer/IDE-Execute/), which explains how to:
+* __Projects are Highly Functional,__ providing:
 
-   1. Install API Logic Server
-   2. Create the sample Tutorial API Logic Server Project
-   3. Open it in your IDE
-   4. Prepare the projects' Python environment
-   5. Start the Server, and open the Admin App in the Browser
+    * __API:__ an endpoint for each table, with filtering, sorting, pagination and related data access
+
+    * __Admin UI:__ multi-page / multi-table apps, with page navigations, automatic joins and declarative hide/show
+
+* __Projects are Customizable, using _your IDE_:__ such as VSCode, PyCharm, etc, for familiar edit/debug services
+
+* __Business Logic Automation:__ using unique spreadsheet-like rules, extensible with Python :trophy:
+
+&nbsp;
+
+<details markdown>
+
+<summary>Why Does It Matter: Faster, Simpler, Modern Architecture</summary>
+
+&nbsp;
+
+<summary>Why Does It Matter: Faster, Simpler, Modern Architecture</summary>
+
+Automation makes it __faster:__ what used to require weeks or months is now immediate.  Unblock UI Dev, and engage business users - _early_ - instead of investing in a misunderstanding.
+
+Automation makes it __simpler:__ this reduces the risk of architectural errors, e.g., APIs without pagination.
+
+Automation guarantees a __modern software architecture:__ _container-ready_, _API-based_, with _shared logic_ between UIs and APIs (no more logic in UI controllers), in a predictable structure for maintenance.
+
+</details>
+
+
+</details>
+
+</details>
+
+&nbsp;
+
+## 1. Open in Codespaces
+
+Open [this template project](https://github.com/ApiLogicServer/ApiLogicProject) in Codespaces.
+
+<details markdown>
+
+<summary>Show Me How</summary>
+
+&nbsp;
+
+<figure><img src="https://github.com/valhuber/apilogicserver/wiki/images/git-codespaces/open-on-codespaces.jpg?raw=true"></figure>
+
+&nbsp;
+
+__1. Use your GitHub account__ - no additional sign-up required
+
+__2. Load the working_software_now project from GitHub__
+
+To access this GitHub project with Codespaces
+
+1. __Open [this page](https://github.com/ApiLogicServer/working_software_now)  _in a new window___, and 
+2. Click __Open > Codespaces__ as shown below
+3. You will see an empty project.
+
+These instructions will continue in Codespaces.
+
+<details markdown>
+
+&nbsp;
+
+<summary>What Just Happened</summary>
+
+
+You will now see the template project - open in VSCode, _in the Browser._  But that's just what you _see..._
+
+Behind the scenes, Codespaces has requisitioned a cloud machine, and loaded the template - with a _complete development environment_ - Python, your dependencies, git, etc.  
+
+You are attached to this machine in your Browser, running VSCode.
+
+> :trophy: Pretty remarkable.
+
+</details>
+
+</details>
+
+
+&nbsp;
+
+## 2. Create a project
+
+Paste this into the Terminal window:
+
+```
+ApiLogicServer create --project_name=./ --db_url=
+```
+
+<details markdown>
+
+<summary>What Just Happened</summary>
+
+&nbsp;
+
+This is **not** a coded application.
+
+The system examined your database (here, the default), and __created an _executable project:___
+
+* __API__ - an endpoint for each table, with full CRUD services, filtering, sorting, pagination and related data access
+
+* __Admin UI__ - multi-page / multi-table apps, with page navigations and automatic joins
+
+__Projects are Customizable, using _your IDE_:__ the Project Explorer shows the project structure.  Use the code editor to customize your project, and the debugger to debug it.
+
+__Business Logic is Automated:__ use unique spreadsheet-like rules to declare multi-table derivations and constraints - 40X more concise than code.  Extend logic with Python.
+
+
+<details markdown>
+
+<summary>Using your own database</summary>
+
+&nbsp;
+
+In this case, we used a default Customers/Orders database.  To use your own database, provide the `db_url` [like this](../Database-Connectivity/).
+
+</details>
+</details>
+
+&nbsp;
+
+## 3. Start Server, Admin App
+
+The project is ready to run:
+
+1. Use the default __Run Configuration__ to start the server, and
+
+2. Click __Ports > Globe__ to start the web app.
+
+<details markdown>
+
+&nbsp;
+
+<summary>Show Me How</summary>
+
+<figure><img src="https://github.com/valhuber/apilogicserver/wiki/images/git-codespaces/create-port-launch-simple.jpg?raw=true"></figure>
+
+</details>
+
+&nbsp;
+
+## 4. Explore the Tutorial
+
+[Open the Tutorial](Tutorial.md) to explore the sample project.
+
+<details markdown>
+
+&nbsp;
+
+<summary>Tutorial Overview</summary>
+
+The Tutorial will enable you to explore 2 key aspects:
+
+* __Initial Automation__ - API and UI creation are automated from the data model. So, later, you'd see this level of automation for your own databases.
+
+* __Customization and Debugging__ - this sample also includes customizations for extending the API and declaring logic, and how to use VSCode to debug these.  The Tutorial will clearly identify such pre-built customizations.
+
+</details>
+
+&nbsp;
+
+Extensive [product documentation is available here](https://valhuber.github.io/ApiLogicServer/) - checkout the [FAQs](https://valhuber.github.io/ApiLogicServer/FAQ-Frameworks/).
+
+&nbsp;
+
+# API Logic Server Background
+
+### Motivation
+
+We looked at approaches for building database systems:  
+
+<br/>
+
+__Frameworks__
+
+Frameworks like Flask or Django enable you to build a single endpoint or _Hello World_ page, but a __multi-endpoint__ API and __multi-page__ application would take __weeks__ or more.
+
+<br/>
+
+__Low Code Tools__
+
+These are great for building great UIs, but
+
+* Want a multi-page app -- __without requiring detail layout for each screen__
+* Want to __preserve standard dev tools__ - VSCode, PyCharm, git, etc
+* Need an answer for __backend logic__ (it's nearly half the effort)
+
+&nbsp;
+
+### Our Approach: Instant, Standards-based Customization, Logic Automation
+
+API Logic Server is an open source Python project.  It runs as a standard Python (`pip`) install, or under Docker. It consists of:
+
+* a set of runtimes (api, user interface, data access) for project execution, plus
+
+* a CLI (Command Language Interface) to create executable projects with a single command
+
+   * Customize your projects in an IDE such as VSCode or PyCharm
+
+
+> :bulb: API Logic Server reads your schema, and creates an executable, customizable project.
+
+&nbsp;
+
+# Appendices
+
+Here is some background about API Logic Server.
 
 
 &nbsp;&nbsp;
 
----
+## Project Information
 
-## Run
-
-With the server started and the Admin App open in your Browser, we are ready to explore the Admin App and the API.
-
-&nbsp;
-
-### Admin App: Multi-Page, Multi-Table, Automatic Joins
-
-After starting the server and browser, explore the Admin App in your browser:
-
-1. Navigate to `Customer`
-      * Depending on your screen size, you may need to hit the "hamburger menu" (top left) to see the left menu<br/><br/>
-2. Click the Customer row  to see Customer Details
-3. Observe the `Placed Order List` tab at the bottom
-4. Click the first Order row
-5. Observe the `Order Detail List` tab at the bottom
-6. Observe the elements shown in the diagram
-
-      * Multi-Page - 2 pages for each table (list, with search, and display)
-      * Multi-Table - database relationships (typically from foreign keys) used to build master/detail pages
-      * Automatic Joins - the Order Detail table contains `ProductId`, but the system has joined in the `Product Name`.  You can edit the `admin.yaml` file to control such behavior.
-
-7. __Leave the server and browser running__
-
-<figure><img src="https://github.com/valhuber/apilogicserver/wiki/images/ui-admin/run-admin-app.png?raw=true"></figure>
+| About                    | Info                               |
+|:-------------------------|:-----------------------------------|
+| Created                  | Nov 7, 2022 07:24:31                      |
+| API Logic Server Version | 6.02.35           |
+| Created in directory     | ../../servers/ApiLogicProject |
+| API Name                 | api          |
 
 &nbsp;&nbsp;
 
-  > :bulb: **Key Take-away:** instant multi-page / multi-table admin apps, suitable for **back office, and instant agile collaboration.**
 
-&nbsp;
+## Key Technologies
 
-### JSON:API - Related Data, Filtering, Sorting, Pagination, Swagger
-Your API is instantly ready to support ui and integration
-development, available in swagger, as shown below.  JSON:APIs are interesting because they
-are client configurable to **reduce network traffic** and **minimize organizational dependencies.**
+API Logic Server is based on the projects shown below.
+Consult their documentation for important information.
 
-The creation process builds not only the API, but also swagger so you can explore it.  The Admin App Home page provides a link to the swagger.  In the browser:
+### SARFS JSON:API Server
 
-1. Click __Home__ to open the Home Page
-2. Click "2. API with __oas/Swagger__" to see the swagger
-3. (Leave the swagger and server running)
+[SAFRS: Python OpenAPI & JSON:API Framework](https://github.com/thomaxxl/safrs)
 
-<figure><img src="https://github.com/valhuber/apilogicserver/wiki/images/ui-admin/swagger.png?raw=true"></figure>
-&nbsp;&nbsp;&nbsp;
+SAFRS is an acronym for SqlAlchemy Flask-Restful Swagger.
+The purpose of this framework is to help python developers create
+a self-documenting JSON API for sqlalchemy database objects and relationships.
 
-  > :bulb: **Key Take-away:** instant *rich* APIs, with filtering, sorting, pagination and swagger.  **Custom App Dev is unblocked.**
+These objects are serialized to JSON and
+created, retrieved, updated and deleted through the JSON API.
+Optionally, custom resource object methods can be exposed and invoked using JSON.
+
+Class and method descriptions and examples can be provided
+in yaml syntax in the code comments.
+
+The description is parsed and shown in the swagger web interface.
+The result is an easy-to-use
+swagger/OpenAPI and JSON:API compliant API implementation.
+
+### LogicBank
+
+[Transaction Logic for SQLAlchemy Object Models](https://valhuber.github.io/ApiLogicServer/Logic-Why/)
+
+Use Logic Bank to govern SQLAlchemy update transaction logic -
+multi-table derivations, constraints, and actions such as sending mail or messages. Logic consists of _both:_
+
+*   **Rules - 40X** more concise using a spreadsheet-like paradigm, and
+
+*   **Python - control and extensibility,** using standard tools and techniques
+
+Logic Bank is based on SQLAlchemy - it handles `before_flush` events to enforce your logic.
+Your logic therefore applies to any SQLAlchemy-based access - JSON:Api, Admin App, etc.
+
+
+### SQLAlchemy
+
+[Object Relational Mapping for Python](https://docs.sqlalchemy.org/en/13/).
+
+SQLAlchemy provides Python-friendly database access for Python.
+
+It is used by JSON:Api, Logic Bank, and the Admin App.
+
+SQLAlchemy processing is based on Python `model` classes,
+created automatically by API Logic Server from your database,
+and saved in the `database` directory.
+
+
+
+### Admin App
+
+This generated project also contains a React Admin app:
+* Multi-page - including page transitions to "drill down"
+* Multi-table - master / details (with tab sheets)
+* Intelligent layout - favorite fields first, predictive joins, etc
+* Logic Aware - updates are monitored by business logic
 
 &nbsp;&nbsp;
 
----
-
-## Customize and Debug
-
-That's quite a good start on a project.  But we've all seen generators that get close, but fail because the results cannot be extended, debugged, or managed with tools such as git and diff.
-
-Let's examine how API Logic Server projects can be customized for both APIs and logic.  We'll first have a quick look at the created project structure, then some typical customizations.
-
-> The API and admin app you just reviewed above were ***not*** customized - they were created completely from the database structure.  For the sample project, we've injected some API and logic customizations, so you can explore them in this tutorial, as described below.
-
-&nbsp;
-
-### Project Structure
-Use VS Code's **Project Explorer** to see the project structure:
+## Project Structure
+This project was created with the following directory structure:
 
 | Directory | Usage                         | Key Customization File             | Typical Customization                                                                 |
 |:-------------- |:------------------------------|:-----------------------------------|:--------------------------------------------------------------------------------------|
 | ```api``` | JSON:API                      | ```api/customize_api.py```         | Add new end points / services                                                         |
 | ```database``` | SQLAlchemy Data Model Classes | ```database/customize_models.py``` | Add derived attributes, and relationships missing in the schema                       |
 | ```logic``` | Transactional Logic           | ```logic/declare_logic.py```       | Declare multi-table derivations, constraints, and events such as send mail / messages |
-| ```ui``` | Admin App                     | ```ui/admin/admin.yaml```          | Control field display, ordering, etc.                                                 |
-
-<figure><img src="https://raw.githubusercontent.com/valhuber/ApiLogicServer/main/images/generated-project.png"></figure>
-
-Let's now explore some examples.
-
-### Admin App Customization
-There is no code for the Admin app - it's behavior is declared in the `admin.yaml` model file.  Alter this file to control labels, hide fields, change display order, etc:
-
-1. Open **Explorer > ui/admin/admin.yaml**
-   * Find and alter the string `- label: 'Placed Order List*'` (e.g, make it plural)
-   * Click Save
-3. Load the updated configuration: in the running Admin App, click __Configuration > Reset__ and __Apply__
-4. Revisit **Customer > Order** to observe the new label
-
-&nbsp;&nbsp;&nbsp;
-
-  > :bulb: **Key Take-away:** you can alter labels, which fields are displayed and their order, etc -- via a simple model.  No need to learn a new framework, or deal with low-level code or html.
-
-
-&nbsp;&nbsp;&nbsp;
-
-### API Customization
-
-While a standards-based API is a great start, sometimes you need custom endpoints tailored exactly to your business requirement.  You can create these as shown below, where we create an additional endpoint for `add_order`.
-
-To review the implementation:
-
-1. Open **Explorer > api/customize_api.py**:
-3. Set the breakpoint as shown
-4. Use the swagger to access the `ServicesEndPoint > add_order`, and
-   1. **Try it out**, then
-   2. **execute**
-5. Your breakpoint will be hit
-   1. You can examine the variables, step, etc.
-6. Click **Continue** on the floating debug menu (upper right in screen shot below)
-
-<figure><img src="https://github.com/valhuber/apilogicserver/wiki/images/tutorial/customize-api.png?raw=true"></figure>
-
+| ```ui``` | Admin App                     | ```ui/admin/admin.yaml```          | Control field display - order, captions etc.                                          |
+| ```tests``` | Behave Test Suite              | ```tests/api_logic_server_behave/features```          | Declare and implement [Behave Tests](https://valhuber.github.io/ApiLogicServer/Behave/)                                          |
 &nbsp;
 
-### Logic
-API and UI automation are impressive answers to _familiar_ challenges.  Logic automation is a _unique_ answer to a significant and unaddressed problem:
+### Key Customization File - Typical Customization
 
-> :exclamation: For transaction systems, backend constraint and derivation logic is often nearly *half* the system.  This is not addressed by conventional approaches of "your code goes here".
+In the table above, the _Key Customization Files_ are created as stubs, intended for you to add customizations that extend
+the created API, Logic and Web App.  Since they are separate files, the project can be
+[rebuilt](https://valhuber.github.io/ApiLogicServer/Project-Rebuild/) (e.g., synchronized with a revised schema), preserving your customizations.
 
-The *logic* portion of API *Logic* server is a declarative approach - you declare spreadsheet-like rules for multi-table constraints and derivations.  The 5 rules shown below represent the same logic as 200 lines of Python - a remarkable **40X.**
-
-> :bulb: Since they automate all the re-use and dependency management, rules are [40X more concise](https://github.com/valhuber/LogicBank/wiki/by-code) than code.  Like a spreadsheet, rules __watch__ for changes, __react__ by automatically executing relevant rules, which can __chain__ to activate other rules; you can [visualize the process here](https://valhuber.github.io/ApiLogicServer/Logic-Operation/#watch-react-chain).
-
-[Logic](https://valhuber.github.io/ApiLogicServer/Logic-Why/) consists of rules **and** conventional Python code.  Explore it like this:
-
-1. Open **Explorer > logic/declare_logic.py**:
-   * Observe the 5 rules highlighted in the diagram below.  These are built with code completion.
-2. Set a breakpoint as shown
-   * This event illustrates that logic is mainly _rules,_ extensible with standard _Python code_
-3. Using swagger, re-execute the `add_order` endpoint
-4. When you hit the breakpoint, expand `row` VARIABLES list (top left)
-
-<figure><img src="https://github.com/valhuber/apilogicserver/wiki/images/tutorial/debug-logic.png?raw=true"></figure>
-
-Internally, rules execute by listening to SQLAlchemy `before_flush` events, as [described here](https://valhuber.github.io/ApiLogicServer/Logic-Operation/#how-usage-and-operation-overview).
-
-> This rule architecture ensures that rules are always re-used across all client applications and integrations.  This avoids common "fat client" approaches that embed logic in user interface controllers, which leads to replication and inconsistency.
-
-&nbsp;&nbsp;
-
----
-
-## Test
-
-You can test using standard api and ui test tools.  We recommend exploring the [Behave framework](https://valhuber.github.io/ApiLogicServer/Behave/).  This can be used as part of an overall agile approach as described in the [Logic Tutorial](https://valhuber.github.io/ApiLogicServer/Logic-Tutorial/).
-
-TL;DR - features and test scripts are predefined in the sample; to run them (with the server running):
-
-1. Run Launch Configuration `Run Behave Logic`
-2. Run Launch Configuration ``Behave Logic Report``
-3. Open `test/api_logic_server_behave/reports/Behave Logic Report.md`
-
-&nbsp;&nbsp;
-
-   > The sample Scenarios below were chosen to illustrate the basic patterns of using rules. Open the disclosure box ("Tests - and their logic...") to see the implementation and notes.   
-
-For more information, see [Testing with Behave](https://valhuber.github.io/ApiLogicServer/Behave/).
-
-&nbsp;&nbsp;
-
----
-
-## Wrap up
-Let's recap what you've seen:
-
-* **ApiLogicProject Creation and Execution** - a database API and an Admin App - created automatically from a database, in moments instead of weeks or months
-
-
-* **Customizable** - the UI, API and Logic - using Visual Studio code, for both editing and debugging
-
-
-### Next Steps
-
-Explore the [Logic Tutorial](https://valhuber.github.io/ApiLogicServer/Logic-Tutorial/).
-
-
-### Docker cleanup
-VS Code leaves the container and image definitions intact, so you can quickly resume your session.  You may wish to delete this. It will look something like `vsc-ApiLogicProject...`.
-
-&nbsp;&nbsp;&nbsp;
+Please see the ```nw``` sample for examples of typical customizations.
