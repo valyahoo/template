@@ -8,9 +8,7 @@
 
 API Logic Server creates __customizable database web app projects:__
 
-* __Creation is Instant:__ create projects with a single command
-
-* __Projects are Highly Functional,__ providing:
+* Creation is __Instant:__ create projects with a single command.  Projects are __Highly Functional,__ providing:
 
     * __API:__ an endpoint for each table, with filtering, sorting, pagination and related data access
 
@@ -28,13 +26,13 @@ API Logic Server creates __customizable database web app projects:__
 
 &nbsp;
 
-<summary>Why Does It Matter: Faster, Simpler, Modern Architecture</summary>
+API Logic Server is a low-code, developer-friendly approach that leverages automation to dramatically improve web app development:
 
-Automation makes it __faster:__ what used to require weeks or months is now immediate.  Unblock UI Dev, and engage business users - _early_ - instead of investing in a misunderstanding.
+* Automation makes it __faster:__ _moments_, instead of weeks or months.  Unblock UI Dev, and engage business users - _early_ - to reduce misunderstandings.  _Customize_ with __standard IDEs.__
 
-Automation makes it __simpler:__ this reduces the risk of architectural errors, e.g., APIs without pagination.
+* Automation makes it __simpler:__ this reduces the risk of architectural errors, e.g., APIs without pagination.
 
-Automation guarantees a __modern software architecture:__ _container-ready_, _API-based_, with _shared logic_ between UIs and APIs (no more logic in UI controllers), in a predictable structure for maintenance.
+* Automation ensures a __modern software architecture:__ _container-ready_, _API-based_, with _shared logic_ over UIs and APIs (no more logic in UI controllers), in maintainable _models_.
 
 </details>
 
@@ -45,7 +43,7 @@ Automation guarantees a __modern software architecture:__ _container-ready_, _AP
 
 &nbsp;
 
-## 1. Open in Codespaces
+## 1. Open in Codespaces (Done)
 
 Open [this template project](https://github.com/ApiLogicServer/ApiLogicProject) in Codespaces.
 
@@ -75,14 +73,15 @@ These instructions will continue in Codespaces.
 
 &nbsp;
 
-<summary>What Just Happened</summary>
-
+<summary>What Is Happening</summary>
 
 You will now see the template project - open in VSCode, _in the Browser._  But that's just what you _see..._
 
 Behind the scenes, Codespaces has requisitioned a cloud machine, and loaded the template - with a _complete development environment_ - Python, your dependencies, git, etc.  
 
 You are attached to this machine in your Browser, running VSCode.
+
+These instructions are now visible in VS Code, to minimize window switching.
 
 > :trophy: Pretty remarkable.
 
@@ -93,17 +92,19 @@ You are attached to this machine in your Browser, running VSCode.
 
 &nbsp;
 
-## 2. Create a project
+## 2. Create a project _(Start Here)_
 
-Paste this into the Terminal window:
+Paste this into the Terminal window (lower right):
 
 ```
 ApiLogicServer create --project_name=./ --db_url=
 ```
 
+When prompted, _do **not** rebuild the container._
+
 <details markdown>
 
-<summary>What Just Happened</summary>
+<summary>What Is Happening</summary>
 
 &nbsp;
 
@@ -135,22 +136,23 @@ In this case, we used a default Customers/Orders database.  To use your own data
 
 ## 3. Start Server, Admin App
 
-The project is ready to run:
+The project is ready to run.
 
-1. Use the default __Run Configuration__ to start the server, and
-
-2. Click __Ports > Globe__ to start the web app.
+Use the prebuilt Run Configuration to start the server, and the prebuilt Port to start the web app.
 
 <details markdown>
 
-&nbsp;
-
 <summary>Show Me How</summary>
+
+As shown below:
+
+1. Use the default __Run Configuration__ to start the server, and 
+
+2. Click __Ports > Globe__ to start the web app. 
 
 <figure><img src="https://github.com/valhuber/apilogicserver/wiki/images/git-codespaces/create-port-launch-simple.jpg?raw=true"></figure>
 
 </details>
-
 &nbsp;
 
 ## 4. Explore the Tutorial
